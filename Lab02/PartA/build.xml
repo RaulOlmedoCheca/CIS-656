@@ -1,0 +1,51 @@
+<project  default='jar'>
+	<property name='build' value='bin'/>
+
+    <target name="clean">
+        <delete dir="${build}"/>
+    </target>
+
+    <target name='compile'>
+        <mkdir dir="${build}"/>
+        <javac includeantruntime="false" srcdir="src" destdir="${build}"/>
+        <!--rmic classname="edu.gvsu.cis.cis656.lab1.MyPresenceServer" base="${build}"/-->
+    </target>
+
+    <target name="jar" depends='compile'>
+        <jar destfile="simple-client.jar" basedir="${build}">
+            <manifest>
+                <attribute name="Main-Class" value="client.ComputePi"/>
+            </manifest>
+        </jar>
+        <jar destfile="simple-server.jar" basedir="${build}">
+            <manifest>
+                <attribute name="Main-Class" value="engine.ComputeEngine"/>
+            </manifest>
+        </jar>
+    </target>
+
+		<target name='run-server' depends='jar'>
+				<java  jar="simple-server.jar" fork="true">
+						<arg value="${user.name}"/>
+						<sysproperty key="java.security.policy" value="policy"/>
+						<sysproperty key="java.rmi.server.useCodebaseOnly" value="false"/>
+				</java>
+		</target>
+
+<!-- Usage: ant run-client -Ddecimal.points=45 -->
+		<target name='run-client' depends='jar'>
+				<java  jar="simple-client.jar" fork="true">
+						<arg value="localhost"/>
+						<arg value="${decimal.points}"/>
+						<sysproperty key="java.security.policy" value="policy"/>
+						<sysproperty key="java.rmi.server.useCodebaseOnly" value="false"/>
+				</java>
+		</target>
+
+
+		<target name='run-rmiregistry'>
+				<exec executable="./runrmi.sh">
+					<arg value="-J-Djava.rmi-server.useCodebaseOnly=false"/>
+				</exec>
+		</target>
+</project>
