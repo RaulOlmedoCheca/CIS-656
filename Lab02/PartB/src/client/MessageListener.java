@@ -27,13 +27,16 @@ public class MessageListener implements Runnable {
             e.printStackTrace();
         }
 
+        //noinspection InfiniteLoopStatement
         while (true) {
             Socket socket = null;
             try {
                 //System.out.println("Listening for connections in " + myInfo.getPort());
-                socket = serverSocket.accept();
+                if (serverSocket != null) {
+                    socket = serverSocket.accept();
+                }
                 //handle incoming message and wait for the next
-                Thread messageThread = new Thread(new MessageConnection(socket, myInfo));
+                Thread messageThread = new Thread(new MessageConnection(socket));
                 messageThread.start();
             } catch (IOException e) {
                 e.printStackTrace();
