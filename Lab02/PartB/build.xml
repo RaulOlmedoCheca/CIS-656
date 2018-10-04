@@ -1,5 +1,5 @@
-<project  default='jar'>
-	<property name='build' value='bin'/>
+<project default='jar'>
+    <property name='build' value='bin'/>
 
     <target name="clean">
         <delete dir="${build}"/>
@@ -14,38 +14,46 @@
     <target name="jar" depends='compile'>
         <jar destfile="simple-client.jar" basedir="${build}">
             <manifest>
-                <attribute name="Main-Class" value="client.ComputePi"/>
+                <attribute name="Main-Class" value="client.ChatClient"/>
             </manifest>
         </jar>
         <jar destfile="simple-server.jar" basedir="${build}">
             <manifest>
-                <attribute name="Main-Class" value="engine.ComputeEngine"/>
+                <attribute name="Main-Class" value="server.PresenceServiceImpl"/>
             </manifest>
         </jar>
     </target>
 
-		<target name='run-server' depends='jar'>
-				<java  jar="simple-server.jar" fork="true">
-						<arg value="${user.name}"/>
-						<sysproperty key="java.security.policy" value="policy"/>
-						<sysproperty key="java.rmi.server.useCodebaseOnly" value="false"/>
-				</java>
-		</target>
+    <!-- Usage: ant run-client -Dport=1099 -->
+    <target name='run-server' depends='jar'>
+        <property name="port" value="1099" />
+        <java jar="simple-server.jar" fork="true">
+            <arg value="${port}"/>
+            <sysproperty key="java.security.policy" value="policy"/>
+            <sysproperty key="java.rmi.server.useCodebaseOnly" value="false"/>
+        </java>
+    </target>
 
-<!-- Usage: ant run-client -Ddecimal.points=45 -->
-		<target name='run-client' depends='jar'>
-				<java  jar="simple-client.jar" fork="true">
-						<arg value="localhost"/>
-						<arg value="${decimal.points}"/>
-						<sysproperty key="java.security.policy" value="policy"/>
-						<sysproperty key="java.rmi.server.useCodebaseOnly" value="false"/>
-				</java>
-		</target>
+    <!-- Usage: ant run-client -Duser=jon {-Dhost=localhost -Dport=1099} -->
+    <!-- Parameters between brackets are optional -->
+    <target name='run-client' depends='jar'>
+        <property name="host" value="localhost" />
+        <property name="port" value="1099" />
+        <java jar="simple-client.jar" fork="true">
+            <arg value="${user}"/>
+            <arg value="${host}"/>
+            <arg value="${port}"/>
+            <sysproperty key="java.security.policy" value="policy"/>
+            <sysproperty key="java.rmi.server.useCodebaseOnly" value="false"/>
+        </java>
+    </target>
 
 
-		<target name='run-rmiregistry'>
-				<exec executable="./runrmi.sh">
-					<arg value="-J-Djava.rmi-server.useCodebaseOnly=false"/>
-				</exec>
-		</target>
+    <target name='run-rmiregistry'>
+        <property name="port" value="1099" />
+        <exec executable="./runrmi.sh">
+            <arg value="${port}"/>
+            <arg value="-J-Djava.rmi-server.useCodebaseOnly=false"/>
+        </exec>
+    </target>
 </project>

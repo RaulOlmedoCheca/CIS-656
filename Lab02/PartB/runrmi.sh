@@ -1,2 +1,2 @@
 cd bin
-rmiregistry
+rmiregistry $1
