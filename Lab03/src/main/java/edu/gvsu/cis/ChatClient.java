@@ -7,6 +7,10 @@ package edu.gvsu.cis;
  * @version 1.0
  */
 
+import org.zeromq.ZContext;
+import org.zeromq.ZMQ;
+import org.zeromq.ZMQException;
+
 import java.rmi.Naming;
 import java.rmi.RemoteException;
 import java.util.Vector;
@@ -20,8 +24,11 @@ public class ChatClient
 {
 
 	PresenceService nameServer;
-    ServerSocket serviceSkt = null;
+    ZMQ.Socket serviceSkt = null;
+    ZMQ.Socket broadcastSkt = null;
+    ZContext serviceContext;
     SvrThread svrThread;
+    BroadcastThread broadcastThread;
     RegistrationInfo regInfo;
 
     /**
@@ -32,7 +39,7 @@ public class ChatClient
      * of the presence service we are connecting to.  If set to null,
      * we'll attempt to connect to port 1099 on the localhost.
      */
-    public ChatClient(String uname,String hostPortStr)
+    public ChatClient(String uname, String hostPortStr)
     {
         // Step 0. Figure out local host name.
         String myHost;
@@ -44,13 +51,9 @@ public class ChatClient
 
         // Step 1. We need to establish a server socket where we will listen for
         // incoming chat requests.
-        try {
-            this.serviceSkt = new ServerSocket(0);
-        } catch (IOException e) {
-            System.out.println("Error: Couldn't allocate local socket endpoint.");
-            System.exit(-1);
-        }
-
+        serviceContext = new ZContext(1);
+        this.serviceSkt = serviceContext.createSocket(ZMQ.REP);
+        this.broadcastSkt = serviceContext.createSocket(ZMQ.SUB);
 
         // Step 2. we bind to the nameserver so we can register our client.
         if(hostPortStr == null) {
@@ -70,7 +73,11 @@ public class ChatClient
         System.out.println("Registering...");
 
         // Step 3. Create the registration info bundle.
-        this.regInfo = new RegistrationInfo(uname,myHost,this.serviceSkt.getLocalPort(),true);
+        this.regInfo = new RegistrationInfo(uname,myHost,this.serviceSkt.bindToRandomPort("tcp://" + myHost),true);
+
+        // Step 3.1. Connect the broadcast socket to the publisher
+        // TODO: avoid hardcoded port
+        broadcastSkt.connect("tcp://" + hostPortStr + ":" + "1100");
 
         // Step 4. register the client with the presence service to advertise it
         // is available for chatting.
@@ -88,8 +95,11 @@ public class ChatClient
         // Step 5. Kick off a separate thread to listen to incoming requests on the
         // Server socket.
         this.svrThread = new SvrThread();
-        Thread t = new Thread(this.svrThread);
-        t.start();
+        this.broadcastThread = new BroadcastThread();
+        Thread t1 = new Thread(this.svrThread);
+        Thread t2 = new Thread(this.broadcastThread);
+        t1.start();
+        t2.start();
     }
 
 
@@ -161,24 +171,7 @@ public class ChatClient
                             continue;
                         }
                         String msg = cmd.substring(pos+1);
-                        Vector<RegistrationInfo> clients = this.nameServer.listRegisteredUsers();
-                        if(clients != null) {
-                            System.out.println("\nBroadcasting to the following users:\n");
-                            for(RegistrationInfo client : clients) {
-                                String userName = client.getUserName();
-                                // Don't broadcast to the local client!
-                                if(!userName.equals(this.regInfo.getUserName())) {
-                                    System.out.print("Sending message to " + userName + " ... " );
-                                    if(!this.sendMsgToKnownUser(client, msg)) {
-                                        System.out.println("failed (unavailable).");
-                                    } else {
-                                        System.out.println("Done!");
-                                    }
-                                }
-                             }
-                        } else {
-                            System.out.println("No users to broadcast to.\n");
-                        }
+                        this.nameServer.broadcast(msg);
                         
                     } else if(cmd.toLowerCase().trim().startsWith("busy")) { 
                     		if(this.regInfo.getStatus()) {
@@ -203,6 +196,9 @@ public class ChatClient
                             this.nameServer.unregister(this.regInfo.getUserName());
                         }
                         this.svrThread.stop();
+                        this.broadcastThread.stop();
+                        this.serviceContext.close();
+                        // TODO: join threads and exit cleanly
                         System.out.println("Goodbye.");
                         done = true;
                     } else {
@@ -251,10 +247,13 @@ public class ChatClient
         } else {
             try {
                 // open a socket connection remote user's client and send message.
-                Socket skt = new Socket(reg.getHost(),reg.getPort());
+                ZContext context = new ZContext(1);
+                ZMQ.Socket skt = context.createSocket(ZMQ.REQ);
+                skt.connect("tcp://" + reg.getHost() + ":" + reg.getPort());
                 String completeMsg = "Message from " + this.regInfo.getUserName() + ": " + msg + "\n";
-                skt.getOutputStream().write(completeMsg.getBytes());
+                skt.send(completeMsg);
                 skt.close();
+                context.close();
             } catch (Exception e) {
                 // hmmm, user was registered, but it looks like they suddenly went away.
                 //e.printStackTrace();
@@ -292,36 +291,18 @@ public class ChatClient
             // wait for incoming requests.
             //
             while(!done) {
-                Socket clientSocket = null;
-                try {
-                    clientSocket = serviceSkt.accept();
-                } catch (IOException e) {
-                    System.out.println("Error: failed to accept remote connection.");
-                }
-
-
-                //
-                // Might have shutdown while  waiting for request...
-                //
-                if(done) {
-                    break;
-                }
-
                 //
                 // Process incoming chat message right here.
                 //
-                byte buf[] = new byte[2048];
                 try {
-                    int cnt = clientSocket.getInputStream().read(buf,0,2048);
-                    String msg = new String(buf,0,cnt);
+                    String msg = serviceSkt.recvStr();
 
                     // We'll refresh the prompt, lest the chimp on the console
                     // get's confused.
                     System.out.println(msg);
                     ChatClient.this.promptUser();
-                    clientSocket.close();
 
-                } catch (IOException ie) {
+                } catch (ZMQException ie) {
                 }
 
             }
@@ -329,8 +310,8 @@ public class ChatClient
             // ok, we're outta here.  Turn the lights out before you leave.
             try {
                 ChatClient.this.serviceSkt.close();
-            } catch (IOException e) {
-                System.out.println("Warning: caught IOException while closing socket.");
+            } catch (ZMQException e) {
+                System.out.println("Warning: caught ZMQException while closing socket.");
             }
             System.out.println("Server thread is exiting.");
         }
@@ -342,6 +323,48 @@ public class ChatClient
          */
         public void stop()
         {
+            // set done to true.
+            done = true;
+
+            //
+            // Just in case svr thread is blocked on accept, we give it a nudge.
+            //
+            Socket skt;
+            try  {
+                skt = new Socket(InetAddress.getLocalHost(),ChatClient.this.regInfo.getPort());
+                skt.close();
+            } catch (Exception e) {
+            }
+        }
+    }
+
+    class BroadcastThread implements Runnable {
+        boolean done = false;
+
+        @Override
+        public void run() {
+            // TODO: avoid printing own messages
+            broadcastSkt.subscribe(ZMQ.SUBSCRIPTION_ALL);
+
+            while(!done) {
+                //
+                // Process incoming chat message right here.
+                //
+                try {
+                    String msg = broadcastSkt.recvStr();
+
+                    // We'll refresh the prompt, lest the chimp on the console
+                    // get's confused.
+                    System.out.println(msg);
+                    ChatClient.this.promptUser();
+
+                } catch (ZMQException ie) {
+                }
+
+            }
+        }
+
+        public void stop() {
             // set done to true.
             done = true;
 

@@ -7,6 +7,11 @@ package edu.gvsu.cis;
  * @version 1.0
  */
 
+import org.zeromq.ZContext;
+import org.zeromq.ZMQ;
+
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
@@ -16,12 +21,27 @@ import java.util.Set;
 import java.util.Vector;
 
 public class MyPresenceServer implements PresenceService {
-	
+
+	ZMQ.Socket pubSocket = null;
+	ZContext pubContext = null;
 	Hashtable<String,RegistrationInfo> regData;
 
 	public MyPresenceServer() {
 		super();
 		this.regData = new Hashtable<String,RegistrationInfo>();
+
+		String myHost;
+		try {
+			myHost = InetAddress.getLocalHost().getHostName();
+		} catch (UnknownHostException e) {
+			myHost = "localhost";
+		}
+
+		pubContext = new ZContext(1);
+		pubSocket = pubContext.createSocket(ZMQ.PUB);
+		// TODO: change hardcoded port in here
+		pubSocket.bind("tcp://" + myHost + ":" + 1100);
+
 	}
 
 	public static void main(String[] args) {
@@ -62,7 +82,8 @@ public class MyPresenceServer implements PresenceService {
 
 	@Override
 	public void broadcast(String msg) throws RemoteException {
-		// TODO:
+		System.out.println("Broadcasting " + msg);
+		pubSocket.send(msg);
 	}
 
 	public RegistrationInfo lookup(String name) throws RemoteException {
