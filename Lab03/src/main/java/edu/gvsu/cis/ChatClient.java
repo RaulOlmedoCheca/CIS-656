@@ -30,6 +30,9 @@ public class ChatClient
     SvrThread svrThread;
     BroadcastThread broadcastThread;
     RegistrationInfo regInfo;
+    String uname;
+    Thread t1;
+    Thread t2;
 
     /**
      * Constructor.
@@ -41,6 +44,7 @@ public class ChatClient
      */
     public ChatClient(String uname, String hostPortStr)
     {
+        this.uname = uname;
         // Step 0. Figure out local host name.
         String myHost;
         try {
@@ -51,7 +55,7 @@ public class ChatClient
 
         // Step 1. We need to establish a server socket where we will listen for
         // incoming chat requests.
-        serviceContext = new ZContext(1);
+        serviceContext = new ZContext();
         this.serviceSkt = serviceContext.createSocket(ZMQ.REP);
         this.broadcastSkt = serviceContext.createSocket(ZMQ.SUB);
 
@@ -76,8 +80,12 @@ public class ChatClient
         this.regInfo = new RegistrationInfo(uname,myHost,this.serviceSkt.bindToRandomPort("tcp://" + myHost),true);
 
         // Step 3.1. Connect the broadcast socket to the publisher
-        // TODO: avoid hardcoded port
-        broadcastSkt.connect("tcp://" + hostPortStr + ":" + "1100");
+        try {
+            broadcastSkt.connect("tcp://" + hostPortStr + ":" + this.nameServer.getBroadcastPort());
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+
 
         // Step 4. register the client with the presence service to advertise it
         // is available for chatting.
@@ -96,8 +104,8 @@ public class ChatClient
         // Server socket.
         this.svrThread = new SvrThread();
         this.broadcastThread = new BroadcastThread();
-        Thread t1 = new Thread(this.svrThread);
-        Thread t2 = new Thread(this.broadcastThread);
+        t1 = new Thread(this.svrThread);
+        t2 = new Thread(this.broadcastThread);
         t1.start();
         t2.start();
     }
@@ -171,7 +179,7 @@ public class ChatClient
                             continue;
                         }
                         String msg = cmd.substring(pos+1);
-                        this.nameServer.broadcast(msg);
+                        this.nameServer.broadcast(this.regInfo.getUserName() + ": " + msg);
                         
                     } else if(cmd.toLowerCase().trim().startsWith("busy")) { 
                     		if(this.regInfo.getStatus()) {
@@ -198,7 +206,8 @@ public class ChatClient
                         this.svrThread.stop();
                         this.broadcastThread.stop();
                         this.serviceContext.close();
-                        // TODO: join threads and exit cleanly
+                        t1.join();
+                        t2.join();
                         System.out.println("Goodbye.");
                         done = true;
                     } else {
@@ -343,7 +352,6 @@ public class ChatClient
 
         @Override
         public void run() {
-            // TODO: avoid printing own messages
             broadcastSkt.subscribe(ZMQ.SUBSCRIPTION_ALL);
 
             while(!done) {
@@ -351,12 +359,27 @@ public class ChatClient
                 // Process incoming chat message right here.
                 //
                 try {
-                    String msg = broadcastSkt.recvStr();
+                    String str = broadcastSkt.recvStr();
+
+                    int pos = str.indexOf(' ');
+
+                    String name;
+                    String msg;
+                    if(pos == -1) {
+                        name = str;
+                        msg = "";
+                    } else {
+                        name = str.substring(0,pos);
+                        msg = str.substring(pos+1);
+                    }
 
                     // We'll refresh the prompt, lest the chimp on the console
                     // get's confused.
-                    System.out.println(msg);
-                    ChatClient.this.promptUser();
+                    if (!name.equals(ChatClient.this.uname + ":")) {
+                        System.out.println(msg);
+                        ChatClient.this.promptUser();
+                    }
+
 
                 } catch (ZMQException ie) {
                 }

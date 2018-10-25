@@ -27,6 +27,12 @@ public interface PresenceService extends Remote {
     boolean register(RegistrationInfo reg) throws RemoteException;
 
     /**
+     * Get the port where the ZMQ broadcast socket is bind
+     * @return port number
+     */
+    int getBroadcastPort() throws RemoteException;
+
+    /**
      * Updates the information of a currently registered client. 
      * @param reg The updated registration info. 
      * @return true if successful, or false if no user with the given

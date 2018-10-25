@@ -25,6 +25,7 @@ public class MyPresenceServer implements PresenceService {
 	ZMQ.Socket pubSocket = null;
 	ZContext pubContext = null;
 	Hashtable<String,RegistrationInfo> regData;
+	int port;
 
 	public MyPresenceServer() {
 		super();
@@ -39,8 +40,7 @@ public class MyPresenceServer implements PresenceService {
 
 		pubContext = new ZContext(1);
 		pubSocket = pubContext.createSocket(ZMQ.PUB);
-		// TODO: change hardcoded port in here
-		pubSocket.bind("tcp://" + myHost + ":" + 1100);
+		port = pubSocket.bindToRandomPort("tcp://" + myHost);
 
 	}
 
@@ -84,6 +84,10 @@ public class MyPresenceServer implements PresenceService {
 	public void broadcast(String msg) throws RemoteException {
 		System.out.println("Broadcasting " + msg);
 		pubSocket.send(msg);
+	}
+
+	public int getBroadcastPort() throws  RemoteException {
+		return port;
 	}
 
 	public RegistrationInfo lookup(String name) throws RemoteException {
