@@ -31,8 +31,6 @@ public class ChatClient
     BroadcastThread broadcastThread;
     RegistrationInfo regInfo;
     String uname;
-    Thread t1;
-    Thread t2;
 
     /**
      * Constructor.
@@ -104,8 +102,8 @@ public class ChatClient
         // Server socket.
         this.svrThread = new SvrThread();
         this.broadcastThread = new BroadcastThread();
-        t1 = new Thread(this.svrThread);
-        t2 = new Thread(this.broadcastThread);
+        Thread t1 = new Thread(this.svrThread);;
+        Thread t2 = new Thread(this.broadcastThread);;
         t1.start();
         t2.start();
     }
@@ -206,8 +204,6 @@ public class ChatClient
                         this.svrThread.stop();
                         this.broadcastThread.stop();
                         this.serviceContext.close();
-                        t1.join();
-                        t2.join();
                         System.out.println("Goodbye.");
                         done = true;
                     } else {
@@ -256,13 +252,11 @@ public class ChatClient
         } else {
             try {
                 // open a socket connection remote user's client and send message.
-                ZContext context = new ZContext(1);
-                ZMQ.Socket skt = context.createSocket(ZMQ.REQ);
+                ZMQ.Socket skt = serviceContext.createSocket(ZMQ.REQ);
                 skt.connect("tcp://" + reg.getHost() + ":" + reg.getPort());
                 String completeMsg = "Message from " + this.regInfo.getUserName() + ": " + msg + "\n";
                 skt.send(completeMsg);
                 skt.close();
-                context.close();
             } catch (Exception e) {
                 // hmmm, user was registered, but it looks like they suddenly went away.
                 //e.printStackTrace();
@@ -385,6 +379,13 @@ public class ChatClient
                 }
 
             }
+            // ok, we're outta here.  Turn the lights out before you leave.
+            try {
+                ChatClient.this.serviceSkt.close();
+            } catch (ZMQException e) {
+                System.out.println("Warning: caught ZMQException while closing socket.");
+            }
+            System.out.println("Broadcast thread is exiting.");
         }
 
         public void stop() {
