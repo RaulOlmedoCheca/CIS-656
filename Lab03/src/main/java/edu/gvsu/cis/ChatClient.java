@@ -203,9 +203,9 @@ public class ChatClient
                         }
                         this.svrThread.stop();
                         this.broadcastThread.stop();
-                        this.serviceContext.close();
                         System.out.println("Goodbye.");
                         done = true;
+                        this.serviceContext.close();
                     } else {
                         System.out.println("Hmm, not sure what you meant there. Try again.");
                     }
@@ -332,9 +332,10 @@ public class ChatClient
             //
             // Just in case svr thread is blocked on accept, we give it a nudge.
             //
-            Socket skt;
+            ZMQ.Socket skt;
             try  {
-                skt = new Socket(InetAddress.getLocalHost(),ChatClient.this.regInfo.getPort());
+                skt = serviceContext.createSocket(ZMQ.REP);
+                skt.bind("tcp://" + InetAddress.getLocalHost() + ":" + ChatClient.this.regInfo.getPort());
                 skt.close();
             } catch (Exception e) {
             }
@@ -395,9 +396,10 @@ public class ChatClient
             //
             // Just in case svr thread is blocked on accept, we give it a nudge.
             //
-            Socket skt;
+            ZMQ.Socket skt;
             try  {
-                skt = new Socket(InetAddress.getLocalHost(),ChatClient.this.regInfo.getPort());
+                skt = serviceContext.createSocket(ZMQ.SUB);
+                skt.bind("tcp://" + InetAddress.getLocalHost() + ":" + ChatClient.this.regInfo.getPort());
                 skt.close();
             } catch (Exception e) {
             }
