@@ -1,5 +1,8 @@
 package edu.gvsu.cis.cis656.clock;
 
+import java.util.Map;
+import java.util.TreeMap;
+
 public interface Clock{
 
 	/**
@@ -68,4 +71,10 @@ public interface Clock{
 	 */
 	void addProcess(int p, int c);
 
+	/**
+	 * Get the internal structure holding the clock data
+	 *
+	 * @return
+	 */
+	TreeMap<String, Integer> getClock();
 }

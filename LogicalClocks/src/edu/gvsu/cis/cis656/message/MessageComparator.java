@@ -1,5 +1,7 @@
 package edu.gvsu.cis.cis656.message;
 
+import edu.gvsu.cis.cis656.clock.VectorClockComparator;
+
 import java.util.Comparator;
 
 /**
@@ -7,10 +9,12 @@ import java.util.Comparator;
  */
 public class MessageComparator implements Comparator<Message> {
 
+    private VectorClockComparator comparator = new VectorClockComparator();
+
     @Override
     public int compare(Message lhs, Message rhs) {
         // Write your code here
-        return 0;
+        return comparator.compare(lhs.ts, rhs.ts);
     }
 
 }

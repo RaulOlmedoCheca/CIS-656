@@ -175,7 +175,7 @@ public class VectorClockTests {
 			if (i < incomingTimes.length)
 				incomingClock.addProcess(i, incomingTimes[i]);
 		}
-		Assert.assertTrue(incomingClock.happenedBefore(refClock));
+ 		Assert.assertTrue(incomingClock.happenedBefore(refClock));
 	}
 	
 	@Test

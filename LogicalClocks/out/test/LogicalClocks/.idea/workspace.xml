@@ -1,0 +1,848 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="server" />
+    </artifacts-to-build>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4baaffee-f6ad-4a01-90fc-e83d64d4805b" name="Default" comment="Added lab04 provided code">
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/test/LogicalClocks/.idea/description.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/test/LogicalClocks/.idea/libraries/junit_junit_4_12.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/test/LogicalClocks/.idea/libraries/org_json_json_Release.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/test/LogicalClocks/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/test/LogicalClocks/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/test/LogicalClocks/.idea/project-template.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/test/LogicalClocks/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/test/LogicalClocks/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/test/LogicalClocks/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/test/LogicalClocks/LogicalClocks.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/edu/gvsu/cis/cis656/client/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/gvsu/cis/cis656/clock/Clock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/gvsu/cis/cis656/clock/Clock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/gvsu/cis/cis656/clock/VectorClock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/gvsu/cis/cis656/clock/VectorClock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/gvsu/cis/cis656/clock/VectorClockComparator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/gvsu/cis/cis656/clock/VectorClockComparator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/gvsu/cis/cis656/message/MessageComparator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/gvsu/cis/cis656/message/MessageComparator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/edu/gvsu/cis/cis656/chat/VectorClockTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/edu/gvsu/cis/cis656/chat/VectorClockTests.java" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_TABLE_DETAILS" value="true" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <expand />
+    <select />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="63239532">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="6" />
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.12" value="1" />
+          <entry key="project.open.time.6" value="1" />
+          <entry key="project.open.time.7" value="2" />
+          <entry key="project.opened" value="6" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="5080" />
+          <entry key="txt" value="25" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="5080" />
+          <entry key="PLAIN_TEXT" value="25" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="class" value="10" />
+          <entry key="java" value="36" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="CLASS" value="10" />
+          <entry key="JAVA" value="36" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/edu/gvsu/cis/cis656/clock/VectorClock.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="203">
+              <caret line="68" selection-start-line="68" selection-end-line="68" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#happenedBefore#0;class#VectorClock#0" />
+                <element signature="method#toString#0;class#VectorClock#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/edu/gvsu/cis/cis656/clock/VectorClockComparator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" selection-start-line="5" selection-end-line="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/edu/gvsu/cis/cis656/client/Client.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="199">
+              <caret line="107" column="17" lean-forward="true" selection-start-line="107" selection-start-column="17" selection-end-line="107" selection-end-column="17" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#3308#3309#0" expanded="true" />
+                <element signature="e#3354#3355#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/edu/gvsu/cis/cis656/message/MessageComparator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>pid</find>
+      <find>System.ou</find>
+      <find>messages</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GradleLocalSettings">
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/test/LamportClockTests.java" />
+        <option value="$PROJECT_DIR$/test/VectorClockTests.java" />
+        <option value="$PROJECT_DIR$/test/edu/gvsu/cis/cis656/LamportClockTests.java" />
+        <option value="$PROJECT_DIR$/test/edu/gvsu/cis/cis656/VectorClockTests.java" />
+        <option value="$PROJECT_DIR$/src/edu/gvsu/cis/cis656/VectorClock.java" />
+        <option value="$PROJECT_DIR$/src/edu/gvsu/cis/cis656/Message.java" />
+        <option value="$PROJECT_DIR$/src/edu/gvsu/cis/cis656/queue/PriorityQueue.java" />
+        <option value="$PROJECT_DIR$/src/edu/gvsu/cis/cis656/Server.java" />
+        <option value="$PROJECT_DIR$/src/edu/gvsu/cis/cis656/ChatClient.java" />
+        <option value="$PROJECT_DIR$/src/edu/gvsu/cis/cis656/message/Message.java" />
+        <option value="$PROJECT_DIR$/src/edu/gvsu/cis/cis656/Main.java" />
+        <option value="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+        <option value="$PROJECT_DIR$/src/edu/gvsu/cis/cis656/message/MessageTypes.java" />
+        <option value="$PROJECT_DIR$/src/edu/gvsu/cis/cis656/clock/Clock.java" />
+        <option value="$PROJECT_DIR$/test/edu/gvsu/cis/cis656/chat/VectorClockTests.java" />
+        <option value="$PROJECT_DIR$/src/edu/gvsu/cis/cis656/clock/VectorClockComparator.java" />
+        <option value="$PROJECT_DIR$/src/edu/gvsu/cis/cis656/message/MessageComparator.java" />
+        <option value="$PROJECT_DIR$/src/edu/gvsu/cis/cis656/client/Client.java" />
+        <option value="$PROJECT_DIR$/src/edu/gvsu/cis/cis656/clock/VectorClock.java" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand />
+      <select />
+    </treeState>
+  </component>
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="width" value="1280" />
+    <option name="height" value="800" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator currentView="PackagesPane" proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="LogicalClocks" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LogicalClocks" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope">
+        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
+          <expand>
+            <path>
+              <item name="LogicalClocks" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="LogicalClocks" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+            </path>
+            <path>
+              <item name="LogicalClocks" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="LogicalClocks" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+            </path>
+            <path>
+              <item name="LogicalClocks" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="LogicalClocks" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="LogicalClocks" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="LogicalClocks" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="edu" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="LogicalClocks" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="LogicalClocks" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="edu" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="gvsu" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="LogicalClocks" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="LogicalClocks" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="edu" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="gvsu" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="cis" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="LogicalClocks" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="LogicalClocks" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="edu" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="gvsu" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="cis" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="cis656" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="LogicalClocks" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="LogicalClocks" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="edu" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="gvsu" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="cis" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="cis656" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="clock" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="LogicalClocks" type="58d84e3e:PackageViewProjectNode" />
+              <item name="LogicalClocks" type="616d4139:PackageViewModuleNode" />
+            </path>
+            <path>
+              <item name="LogicalClocks" type="58d84e3e:PackageViewProjectNode" />
+              <item name="LogicalClocks" type="616d4139:PackageViewModuleNode" />
+              <item name="edu.gvsu.cis.cis656" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="LogicalClocks" type="58d84e3e:PackageViewProjectNode" />
+              <item name="LogicalClocks" type="616d4139:PackageViewModuleNode" />
+              <item name="edu.gvsu.cis.cis656" type="1f31426a:PackageElementNode" />
+              <item name="chat" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="LogicalClocks" type="58d84e3e:PackageViewProjectNode" />
+              <item name="LogicalClocks" type="616d4139:PackageViewModuleNode" />
+              <item name="edu.gvsu.cis.cis656" type="1f31426a:PackageElementNode" />
+              <item name="client" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="LogicalClocks" type="58d84e3e:PackageViewProjectNode" />
+              <item name="LogicalClocks" type="616d4139:PackageViewModuleNode" />
+              <item name="edu.gvsu.cis.cis656" type="1f31426a:PackageElementNode" />
+              <item name="clock" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="LogicalClocks" type="58d84e3e:PackageViewProjectNode" />
+              <item name="LogicalClocks" type="616d4139:PackageViewModuleNode" />
+              <item name="edu.gvsu.cis.cis656" type="1f31426a:PackageElementNode" />
+              <item name="message" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="LogicalClocks" type="58d84e3e:PackageViewProjectNode" />
+              <item name="LogicalClocks" type="616d4139:PackageViewModuleNode" />
+              <item name="edu.gvsu.cis.cis656" type="1f31426a:PackageElementNode" />
+              <item name="queue" type="1f31426a:PackageElementNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="AndroidView" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="true" />
+    <property name="GenerateAntBuildDialog.backupFiles" value="true" />
+    <property name="GenerateAntBuildDialog.enableUiFormCompile" value="true" />
+    <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
+    <property name="GenerateAntBuildDialog.outputFileNameProperty" value="logicalclocks" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/src/edu/gvsu/cis/cis656" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/edu/gvsu/cis/cis656" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/edu/gvsu/cis/cis656" />
+      <recent name="$PROJECT_DIR$/test" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.ChatClient">
+    <configuration name="ChatClient" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="edu.gvsu.cis.cis656.client.Client" />
+      <module name="LogicalClocks" />
+      <option name="PROGRAM_PARAMETERS" value="raul 70 localhost 8000" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Server" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="edu.gvsu.cis.cis656.Server" />
+      <module name="LogicalClocks" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="VectorClockTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="LogicalClocks" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="edu.gvsu.cis.cis656.chat.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.gvsu.cis.cis656.chat" />
+      <option name="MAIN_CLASS_NAME" value="edu.gvsu.cis.cis656.chat.VectorClockTests" />
+      <option name="VM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="VectorClockTests.compareWithParallelEventMissingEvents" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="LogicalClocks" />
+      <option name="PACKAGE_NAME" value="edu.gvsu.cis.cis656.chat" />
+      <option name="MAIN_CLASS_NAME" value="edu.gvsu.cis.cis656.chat.VectorClockTests" />
+      <option name="METHOD_NAME" value="compareWithParallelEventMissingEvents" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="VectorClockTests.convertCorrectStringToClock" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="LogicalClocks" />
+      <option name="PACKAGE_NAME" value="edu.gvsu.cis.cis656.chat" />
+      <option name="MAIN_CLASS_NAME" value="edu.gvsu.cis.cis656.chat.VectorClockTests" />
+      <option name="METHOD_NAME" value="convertCorrectStringToClock" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="VectorClockTests.convertIncorrectStringToClock" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="LogicalClocks" />
+      <option name="PACKAGE_NAME" value="edu.gvsu.cis.cis656.chat" />
+      <option name="MAIN_CLASS_NAME" value="edu.gvsu.cis.cis656.chat.VectorClockTests" />
+      <option name="METHOD_NAME" value="convertIncorrectStringToClock" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="VectorClockTests.testClockSortingOne" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="LogicalClocks" />
+      <option name="PACKAGE_NAME" value="edu.gvsu.cis.cis656.chat" />
+      <option name="MAIN_CLASS_NAME" value="edu.gvsu.cis.cis656.chat.VectorClockTests" />
+      <option name="METHOD_NAME" value="testClockSortingOne" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Server" />
+      <item itemvalue="Application.ChatClient" />
+      <item itemvalue="JUnit.VectorClockTests" />
+      <item itemvalue="JUnit.VectorClockTests.convertIncorrectStringToClock" />
+      <item itemvalue="JUnit.VectorClockTests.convertCorrectStringToClock" />
+      <item itemvalue="JUnit.VectorClockTests.compareWithParallelEventMissingEvents" />
+      <item itemvalue="JUnit.VectorClockTests.testClockSortingOne" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.VectorClockTests" />
+        <item itemvalue="JUnit.VectorClockTests.testClockSortingOne" />
+        <item itemvalue="JUnit.VectorClockTests.compareWithParallelEventMissingEvents" />
+        <item itemvalue="JUnit.VectorClockTests.convertCorrectStringToClock" />
+        <item itemvalue="JUnit.VectorClockTests.convertIncorrectStringToClock" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4baaffee-f6ad-4a01-90fc-e83d64d4805b" name="Default" comment="" />
+      <created>1508788197259</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1508788197259</updated>
+      <workItem from="1508788201012" duration="26924000" />
+      <workItem from="1509133142796" duration="5082000" />
+    </task>
+    <task id="LOCAL-00001" summary="Added lab04 provided code">
+      <created>1541720009124</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1541720009124</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="VectorClockTests - 2018.11.27 at 15h 41m 38s.xml">
+      <configuration name="VectorClockTests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="VectorClockTests - 2018.11.27 at 15h 41m 51s.xml">
+      <configuration name="VectorClockTests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="VectorClockTests_compareWithParallelEventMissingEvents - 2018.11.27 at 15h 43m 06s.xml">
+      <configuration name="VectorClockTests.compareWithParallelEventMissingEvents" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="VectorClockTests_compareWithParallelEventMissingEvents - 2018.11.27 at 15h 43m 10s.xml">
+      <configuration name="VectorClockTests.compareWithParallelEventMissingEvents" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="VectorClockTests - 2018.11.27 at 15h 43m 17s.xml">
+      <configuration name="VectorClockTests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="VectorClockTests_testClockSortingOne - 2018.11.27 at 15h 45m 07s.xml">
+      <configuration name="VectorClockTests.testClockSortingOne" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="VectorClockTests_testClockSortingOne - 2018.11.27 at 15h 45m 14s.xml">
+      <configuration name="VectorClockTests.testClockSortingOne" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="VectorClockTests_testClockSortingOne - 2018.11.27 at 15h 45m 18s.xml">
+      <configuration name="VectorClockTests.testClockSortingOne" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="VectorClockTests - 2018.11.27 at 15h 45m 27s.xml">
+      <configuration name="VectorClockTests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="VectorClockTests - 2018.11.28 at 16h 47m 02s.xml">
+      <configuration name="VectorClockTests" configurationId="JUnit" />
+    </history-entry>
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="32006000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20193861" />
+      <window_info id="Structure" order="1" weight="0.24959612" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32904884" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4978701" weight="0.23424658" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49574015" weight="0.40547946" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32876712" />
+      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.32876712" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5042598" side_tool="true" weight="0.40723562" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32739726" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.24959612" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Database" order="6" weight="0.3297568" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Maven Projects" order="8" weight="0.3297568" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added lab04 provided code" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added lab04 provided code" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/test/edu/gvsu/cis/cis656/chat/VectorClockTests.java</url>
+          <line>203</line>
+          <properties />
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/src.zip!/java/lang/Thread.java" />
+    <entry file="file://$PROJECT_DIR$/test/edu/gvsu/cis/cis656/chat/LamportClockTests.java" />
+    <entry file="jar://$PROJECT_DIR$/lib/json-20171018.jar!/org/json/JSONObject.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="138" selection-start-line="138" selection-end-line="138" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/src.zip!/java/lang/NumberFormatException.java" />
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/src.zip!/java/lang/Integer.java" />
+    <entry file="file://$PROJECT_DIR$/src/edu/gvsu/cis/cis656/Main.java" />
+    <entry file="file://$PROJECT_DIR$/src/edu/gvsu/cis/cis656/Server.java" />
+    <entry file="file://$PROJECT_DIR$/src/edu/gvsu/cis/cis656/ChatClient.java" />
+    <entry file="file://$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+    <entry file="file://$PROJECT_DIR$/src/edu/gvsu/cis/cis656/message/ErrorCodes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-348">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/gvsu/cis/cis656/message/MessageTypes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="38" selection-start-line="7" selection-start-column="38" selection-end-line="7" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/junit-4.12.jar!/org/junit/runners/BlockJUnit4ClassRunner.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="49" selection-start-line="49" selection-end-line="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home/src.zip!/java/lang/StringBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="388" column="15" selection-start-line="388" selection-start-column="15" selection-end-line="388" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home/src.zip!/java/lang/AbstractStringBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="234" column="16" selection-start-line="234" selection-start-column="16" selection-end-line="234" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home/src.zip!/java/lang/Character.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="4568" column="28" selection-start-line="4568" selection-start-column="28" selection-end-line="4568" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home/src.zip!/java/lang/String.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="2866" column="18" selection-start-line="2866" selection-start-column="18" selection-end-line="2866" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/junit-4.12.jar!/org/junit/runners/ParentRunner.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="202" selection-start-line="202" selection-end-line="202" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/junit-4.12.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/gvsu/cis/cis656/message/Message.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-511">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home/src.zip!/java/net/DatagramSocket.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="86">
+          <caret line="275" column="59" selection-start-line="275" selection-start-column="54" selection-end-line="275" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/gvsu/cis/cis656/message/MessageComparator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/gvsu/cis/cis656/queue/PriorityQueue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="930">
+          <caret line="62" column="13" selection-start-line="62" selection-start-column="13" selection-end-line="62" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/edu/gvsu/cis/cis656/chat/VectorClockTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="167" column="16" selection-start-line="167" selection-start-column="16" selection-end-line="167" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/gvsu/cis/cis656/client/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="107" column="17" lean-forward="true" selection-start-line="107" selection-start-column="17" selection-end-line="107" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3308#3309#0" expanded="true" />
+            <element signature="e#3354#3355#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/gvsu/cis/cis656/clock/VectorClockComparator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/gvsu/cis/cis656/clock/Clock.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="334">
+          <caret line="38" column="14" selection-start-line="38" selection-start-column="14" selection-end-line="38" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/gvsu/cis/cis656/clock/VectorClock.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="68" selection-start-line="68" selection-end-line="68" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#happenedBefore#0;class#VectorClock#0" />
+            <element signature="method#toString#0;class#VectorClock#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor>
+            <show-content>
+              <type id="artifact" />
+              <type id="javaee-facet-resources" />
+              <type id="library" />
+              <type id="jpa-descriptors" />
+            </show-content>
+          </artifact-editor>
+          <last-edited>server</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>LogicalClocks</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>junit:junit:4.12</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
