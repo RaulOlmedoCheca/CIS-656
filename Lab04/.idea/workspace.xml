@@ -6,25 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4baaffee-f6ad-4a01-90fc-e83d64d4805b" name="Default" comment="Added lab04 provided code">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/test/LogicalClocks/.idea/description.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/test/LogicalClocks/.idea/libraries/junit_junit_4_12.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/test/LogicalClocks/.idea/libraries/org_json_json_Release.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/test/LogicalClocks/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/test/LogicalClocks/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/test/LogicalClocks/.idea/project-template.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/test/LogicalClocks/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/test/LogicalClocks/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/test/LogicalClocks/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/test/LogicalClocks/LogicalClocks.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/edu/gvsu/cis/cis656/client/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/gvsu/cis/cis656/clock/Clock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/gvsu/cis/cis656/clock/Clock.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/gvsu/cis/cis656/clock/VectorClock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/gvsu/cis/cis656/clock/VectorClock.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/gvsu/cis/cis656/clock/VectorClockComparator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/gvsu/cis/cis656/clock/VectorClockComparator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/gvsu/cis/cis656/message/MessageComparator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/gvsu/cis/cis656/message/MessageComparator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/edu/gvsu/cis/cis656/chat/VectorClockTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/edu/gvsu/cis/cis656/chat/VectorClockTests.java" afterDir="false" />
-    </list>
+    <list default="true" id="4baaffee-f6ad-4a01-90fc-e83d64d4805b" name="Default" comment="Completed lab04" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -47,7 +29,7 @@
     <session id="63239532">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="6" />
+          <entry key="project.closed" value="7" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.12" value="2" />
@@ -59,13 +41,13 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="java" value="6262" />
-          <entry key="txt" value="25" />
+          <entry key="txt" value="37" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JAVA" value="6262" />
-          <entry key="PLAIN_TEXT" value="25" />
+          <entry key="PLAIN_TEXT" value="37" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -109,7 +91,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/edu/gvsu/cis/cis656/client/Client.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="40">
+            <state relative-caret-position="100">
               <caret line="101" selection-start-line="101" selection-end-line="101" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -487,7 +469,14 @@
       <option name="project" value="LOCAL" />
       <updated>1541720009124</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Completed lab04">
+      <created>1543453237563</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1543453237564</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -547,12 +536,12 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32904884" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49676898" weight="0.23424658" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.49574015" visible="true" weight="0.40547946" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49574015" weight="0.40547946" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32876712" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49676898" weight="0.32876712" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.49676898" visible="true" weight="0.32876712" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.503231" side_tool="true" weight="0.23424658" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32739726" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -574,7 +563,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added lab04 provided code" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added lab04 provided code" />
+    <MESSAGE value="Completed lab04" />
+    <option name="LAST_COMMIT_MESSAGE" value="Completed lab04" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -757,7 +747,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/gvsu/cis/cis656/client/Client.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
+        <state relative-caret-position="100">
           <caret line="101" selection-start-line="101" selection-end-line="101" />
           <folding>
             <element signature="imports" expanded="true" />
