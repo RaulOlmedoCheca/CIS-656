@@ -42,7 +42,6 @@ public class Client {
         try {
             serverAddress = InetAddress.getLocalHost();
         } catch (UnknownHostException e) {
-            // Unable to get localhost internet address
             e.printStackTrace();
         }
 
@@ -92,7 +91,7 @@ public class Client {
     }
 
     public static void main(String[] args) {
-        Client myClient = new Client();
+        new Client();
     }
 
     class MessageReceiverThread implements Runnable {
@@ -104,13 +103,6 @@ public class Client {
                     messages.add(message);
                 }
                 Message topMsg = messages.peek();
-                VectorClockComparator vcc = new VectorClockComparator();
-                if (vcc.compare(myVectorClock, topMsg.ts) == 0) {
-                    System.out.println("Less Than Current: " + topMsg.sender + ": " + topMsg.message);
-                    myVectorClock.update(topMsg.ts);
-                    messages.poll();
-                    continue;
-                }
 
                 while (topMsg != null && !messages.isEmpty()) {
                     topMsg = messages.peek();
@@ -118,19 +110,19 @@ public class Client {
                     merge.update(myVectorClock);
                     merge.update(topMsg.ts);
 
-                    boolean print = false;
+                    boolean willPrint = false;
                     if (topMsg.ts.getTime(topMsg.pid) == myVectorClock.getTime(topMsg.pid) + 1) {
-                        print = true;
+                        willPrint = true;
                         for (String key : merge.getClock().keySet()) {
                             if (topMsg.pid == Integer.valueOf(key)) {
                                 continue;
                             }
                             if (topMsg.ts.getTime(Integer.parseInt(key)) > (myVectorClock.getTime(Integer.parseInt(key)))) {
-                                print = false;
+                                willPrint = false;
                             }
                         }
                     }
-                    if (print) {
+                    if (willPrint) {
                         System.out.println(topMsg.sender + ": " + topMsg.message);
                         myVectorClock.update(topMsg.ts);
                         messages.poll();
